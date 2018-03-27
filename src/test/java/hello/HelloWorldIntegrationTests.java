@@ -29,10 +29,18 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringRunner;
 
+
+/*
+The embedded server is started up on a random port by virtue of the webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT and the actual port is discovered at runtime with the @LocalServerPort.
+
+
+ */
+
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 @DirtiesContext
-public class HelloWorldConfigurationTests {
+public class HelloWorldIntegrationTests
+{
 
     @LocalServerPort
     private int port;
